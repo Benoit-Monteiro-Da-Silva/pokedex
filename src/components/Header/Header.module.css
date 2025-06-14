@@ -1,6 +1,8 @@
+@import url("../../constants/constants.css");
+
 .header {
     padding: 20px;
-    background: beige;
+    background: var(--main-color);
 }
 
 .link {

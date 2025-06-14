@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { ROUTES } from "./constants/routes"
 import { Homepage } from './pages/Homepage/Homepage'

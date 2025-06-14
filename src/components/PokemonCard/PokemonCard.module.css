@@ -12,6 +12,10 @@
     box-shadow: 5px 5px 10px grey;
 }
 
+.pokemonCard:hover {
+    background:aliceblue;
+}
+
 .imgContainer {
     width: 150px;
     height: 150px;
@@ -33,7 +37,7 @@
 
 .typeBadge {
     padding: 4px 12px;
-    border-radius: 20px;
+    border-radius: 15px;
     color: white;
     font-weight: 500;
 }

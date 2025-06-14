@@ -1,6 +1,7 @@
 import { PokemonCard } from "../PokemonCard/PokemonCard"
 import style from "./PokemonCardList.module.css"
 
+//Display all PokemonCard from a given array of pokemon data
 export function PokemonCardList({pkmnArray}) {
     return (
         <ul className={style.pkmnList}>
