@@ -10,7 +10,9 @@ export function Homepage() {
   const [filterValue, setFilterValue] = useState('')
 
   const filteredPokemons = pokemons.filter(pokemon => (
-    Normalizer.stringNormalizer(pokemon.name).includes(Normalizer.stringNormalizer(filterValue))
+    Normalizer.stringNormalize(pokemon.name).includes(Normalizer.stringNormalize(filterValue)) ||
+    Normalizer.stringNormalize(pokemon.types[0]).includes(Normalizer.stringNormalize(filterValue)) ||
+    (pokemon.types[1] && Normalizer.stringNormalize(pokemon.types[1]).includes(Normalizer.stringNormalize(filterValue)))
   ))
 
   const loadAllPokemons = async () => {  
