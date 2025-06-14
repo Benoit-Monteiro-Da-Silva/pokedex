@@ -1,0 +1,8 @@
+.pkmnList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    justify-content: center;
+    gap: 20px;
+
+    padding: 40px;
+}

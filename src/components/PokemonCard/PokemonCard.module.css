@@ -4,16 +4,17 @@
     align-items: center;
 
     flex-shrink: 0;
-    width: 350px;
+    width: 250px;
 
     padding: 20px;
     border: 1px solid rgba(0,0,0,0.3);
     border-radius: 30px;
+    box-shadow: 5px 5px 10px grey;
 }
 
 .imgContainer {
-    width: 220px;
-    height: 220px;
+    width: 150px;
+    height: 150px;
 
     img {
         width: 100%;
@@ -28,8 +29,6 @@
 .pokemonTypesList {
     display: flex;
     gap: 20px;
-
-    list-style: none;
 }
 
 .typeBadge {
