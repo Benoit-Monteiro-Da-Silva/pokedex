@@ -1,6 +1,7 @@
-import style from "./Filter.module.css"
+import style from "./SearchBar.module.css"
 
-export function Filter({inputValue, onInputChange}) {
+//Display an input field used to update a string state
+export function SearchBar({inputValue, onInputChange}) {
     return(
         <input 
             type="text"

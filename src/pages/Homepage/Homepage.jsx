@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import { fetchAllPokemons } from "../../api/apiFetch"
 import { PokemonCardList } from '../../components/PokemonCardList/PokemonCardList'
-import { Filter } from '../../components/Filter/Filter'
+import { SearchBar } from '../../components/SearchBar/SearchBar'
 import style from "./Homepage.module.css"
+import { Normalizer } from '../../services/services'
 
 export function Homepage() {
   const [pokemons, setPokemons] = useState([])
   const [filterValue, setFilterValue] = useState('')
 
   const filteredPokemons = pokemons.filter(pokemon => (
-    pokemon.name.toLowerCase().trim().includes(filterValue.toLowerCase().trim())
+    Normalizer.stringNormalizer(pokemon.name).includes(Normalizer.stringNormalizer(filterValue))
   ))
 
   const loadAllPokemons = async () => {  
@@ -23,7 +24,7 @@ export function Homepage() {
 
   return(
     <main className={style.homepage}>
-      <Filter inputValue={filterValue} onInputChange={setFilterValue}/>
+      <SearchBar inputValue={filterValue} onInputChange={setFilterValue}/>
       <PokemonCardList pkmnArray={filteredPokemons}/>
     </main>
   )    
