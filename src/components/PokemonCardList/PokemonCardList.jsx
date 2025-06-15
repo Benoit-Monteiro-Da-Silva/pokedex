@@ -10,8 +10,7 @@ export function PokemonCardList({pkmnArray}) {
                     <PokemonCard
                         id={pkmn.id} 
                         name={pkmn.name} 
-                        types={pkmn.types} 
-                        image={`${import.meta.env.VITE_IMAGE_BASE_URL}/${pkmn.id}.svg`}/>
+                        types={pkmn.types}/>
                 </li>
             ))}
         </ul>

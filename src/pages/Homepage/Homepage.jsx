@@ -9,11 +9,13 @@ export function Homepage() {
   const [pokemons, setPokemons] = useState([])
   const [filterValue, setFilterValue] = useState('')
 
-  const filteredPokemons = pokemons.filter(pokemon => (
-    Normalizer.stringNormalize(pokemon.name).includes(Normalizer.stringNormalize(filterValue)) ||
-    Normalizer.stringNormalize(pokemon.types[0]).includes(Normalizer.stringNormalize(filterValue)) ||
-    (pokemon.types[1] && Normalizer.stringNormalize(pokemon.types[1]).includes(Normalizer.stringNormalize(filterValue)))
-  ))
+  const filteredPokemons = pokemons.filter(pokemon => {
+    const normalizedFilterValue = Normalizer.stringNormalize(filterValue)
+    return  Normalizer.stringNormalize(pokemon.name).includes(normalizedFilterValue) ||
+            Normalizer.stringNormalize(pokemon.types[0]).includes(normalizedFilterValue) ||
+            (pokemon.types[1] && Normalizer.stringNormalize(pokemon.types[1]).includes(normalizedFilterValue))
+    }
+  )
 
   const loadAllPokemons = async () => {  
     const apiResponse = await fetchAllPokemons()
@@ -27,7 +29,8 @@ export function Homepage() {
   return(
     <main className={style.homepage}>
       <SearchBar inputValue={filterValue} onInputChange={setFilterValue}/>
-      <PokemonCardList pkmnArray={filteredPokemons}/>
+      <PokemonCardList pkmnArray={filteredPokemons}/> 
+      {filteredPokemons.length === 0 && filterValue !=='' && <p>Aucun résultat pour la recherche : "{filterValue}"</p>}
     </main>
   )    
 }
