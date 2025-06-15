@@ -8,7 +8,10 @@ import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypes
 import { Stat } from "../../components/Stat/Stat"
 
 export function Detailpage() {
+    
     const {id} = useParams()
+    const parsedId = Number(id)
+    const parsedMaxId = Number(import.meta.env.VITE_MAX_POKEMON_ID)
     const navigate = useNavigate()
     const [currentPokemon, setCurrentPokemon] = useState(null)
 
@@ -18,7 +21,7 @@ export function Detailpage() {
     }
 
     useEffect(() => {
-        if (id >= 1 && id <= import.meta.env.VITE_MAX_POKEMON_ID) {
+        if (parsedId >= 1 && parsedId <= parsedMaxId) {
             loadCurrentPokemon(id)
         } else {
             navigate(ROUTES.NOT_FOUND)
