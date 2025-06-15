@@ -20,3 +20,12 @@ export const PKMN_TYPES = Object.freeze([
 { name: "Unknown", color: "#68A090" },
 { name: "Shadow", color: "#705898" },
 ]);
+
+export const MAX_STAT = Object.freeze({
+"Attack": 130,
+"Defense": 180,
+"Special attack": 135,
+"Special defense": 120,
+"Speed": 120,
+"HP": 105,
+});
