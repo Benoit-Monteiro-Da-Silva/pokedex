@@ -1,0 +1,4 @@
+.detailpage {
+    display: flex;
+    flex-direction: column;
+}

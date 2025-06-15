@@ -11,9 +11,11 @@ export function Homepage() {
 
   const filteredPokemons = pokemons.filter(pokemon => {
     const normalizedFilterValue = Normalizer.stringNormalize(filterValue)
-    return  Normalizer.stringNormalize(pokemon.name).includes(normalizedFilterValue) ||
-            Normalizer.stringNormalize(pokemon.types[0]).includes(normalizedFilterValue) ||
-            (pokemon.types[1] && Normalizer.stringNormalize(pokemon.types[1]).includes(normalizedFilterValue))
+    const normalizedPokemonName = Normalizer.stringNormalize(pokemon.name)
+    const normalizedPokemonTypes = pokemon.types.map(type => Normalizer.stringNormalize(type))
+    return  normalizedPokemonName.includes(normalizedFilterValue) ||
+            normalizedPokemonTypes[0].includes(normalizedFilterValue) ||
+            (pokemon.types[1] && normalizedPokemonTypes[1].includes(normalizedFilterValue))
     }
   )
 
