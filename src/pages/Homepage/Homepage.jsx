@@ -28,6 +28,7 @@ export function Homepage() {
     loadAllPokemons()
   }, [])
 
+  
   return(
     <main className={style.homepage}>
       <SearchBar inputValue={filterValue} onInputChange={setFilterValue}/>
