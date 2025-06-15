@@ -29,15 +29,3 @@
 .pokemonName {
     font-weight: 500;
 }
-
-.pokemonTypesList {
-    display: flex;
-    gap: 20px;
-}
-
-.typeBadge {
-    padding: 4px 12px;
-    border-radius: 15px;
-    color: white;
-    font-weight: 500;
-}

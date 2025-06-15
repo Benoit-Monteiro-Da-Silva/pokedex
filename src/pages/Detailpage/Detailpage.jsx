@@ -27,7 +27,7 @@ export function Detailpage() {
                 </div>
 
                 <div className={style.pkmnResume}>
-                    <h1>{currentPokemon.name}</h1>
+                    <h1>{currentPokemon?.name}</h1>
                 </div>
             </div>
         </main>
