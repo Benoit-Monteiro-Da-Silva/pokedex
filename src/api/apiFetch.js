@@ -1,6 +1,6 @@
 export const fetchAllPokemons = async () => {
     try {
-        const apiData = await fetch(`${import.meta.env.VITE_API_BASE_URL}${import.meta.env.VITE_API_POKEMONS_ENDPOINT}`)
+        const apiData = await fetch(`${import.meta.env.VITE_API_BASE_URL}/pokemons`)
         const response = await apiData.json()
         return response
     } catch (error) {
@@ -11,7 +11,7 @@ export const fetchAllPokemons = async () => {
 
 export const fetchOnePokemon = async (id) => {
     try {
-        const apiData = await fetch(`${import.meta.env.VITE_API_BASE_URL}${import.meta.env.VITE_API_POKEMONS_ENDPOINT}/${id}`)
+        const apiData = await fetch(`${import.meta.env.VITE_API_BASE_URL}/pokemons/${id}`)
         const response = await apiData.json()
         return response
     } catch (error) {

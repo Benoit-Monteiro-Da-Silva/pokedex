@@ -15,15 +15,15 @@ export function Detailpage() {
 
     useEffect(() => {
         loadCurrentPokemon(id)
-    }, [])
+    }, [id])
 
 
     return(
         <main className={style.detailpage}>
-            <NavButtons id={id}/>
+            <NavButtons id={currentPokemon?.id}/>
             <div>
                 <div className={style.imgContainer}>
-                    <img src={`${import.meta.env.VITE_IMAGE_BASE_URL}/${id}.svg`}/>
+                    <img src={`${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`}/>
                 </div>
 
                 <div className={style.pkmnResume}>
