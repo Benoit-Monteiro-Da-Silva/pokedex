@@ -43,7 +43,7 @@ export function Detailpage() {
                         <h1>{currentPokemon?.name}</h1>
                         <PokemonTypesList types={currentPokemon?.types}/>
                         <Stat statLabel={'HP'} statValue={45}/>
-                        <Stat statLabel={'Special defense'} statValue={103}/>
+                        <Stat statLabel={'Special defense'} statValue={255}/>
                     </div>
                 </div>
             </main>

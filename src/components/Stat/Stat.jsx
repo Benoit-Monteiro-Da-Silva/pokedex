@@ -3,7 +3,7 @@ import { MAX_STAT } from "../../constants/pkmn_fixed_data"
 
 //Display a given pokemon stat with its name, its value, and a graphic bar
 export function Stat({statLabel, statValue}) {
-    const statWidth = (statValue / MAX_STAT[statLabel]) * 100
+    const statWidth = statValue < MAX_STAT[statLabel] ? (statValue / MAX_STAT[statLabel]) * 100 : 100
 
     return(
         <div className={style.stat}>
