@@ -28,3 +28,11 @@
     font-weight: 500;
     font-size: 48px;
 }
+
+.homeLink {
+    display: block;
+    margin-block: 20px;
+    font-size: 18px;
+    text-decoration: underline;
+    color: blue;
+}

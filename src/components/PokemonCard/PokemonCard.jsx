@@ -3,7 +3,7 @@ import { Link } from "react-router"
 import { ROUTES } from "../../constants/routes"
 import { PokemonTypesList } from "../PokemonTypesList/PokemonTypesList"
 
-//Display a pokemon card with its image, its id, its name and its types
+//Display a pokemon card and redirect to the corresponding pokemon page when clicked on
 export function PokemonCard({id, name, types}) {
 
     return(

@@ -1,4 +1,4 @@
-import { PKMN_TYPES } from "../constants/pkmn_types_colors"
+import { PKMN_TYPES } from "../constants/pkmn_fixed_data.js"
 
 export const getTypeColor = (type) => {
     for (const item of PKMN_TYPES) {
