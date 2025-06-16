@@ -13,6 +13,7 @@ export function Detailpage() {
     const parsedId = Number(id)
     const parsedMaxId = Number(import.meta.env.VITE_MAX_POKEMON_ID)
     const navigate = useNavigate()
+    
     const [currentPokemon, setCurrentPokemon] = useState(null)
 
     const loadCurrentPokemon = async (id) => {
