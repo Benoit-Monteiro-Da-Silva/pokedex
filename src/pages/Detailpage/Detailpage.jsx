@@ -5,7 +5,7 @@ import { useState, useEffect} from "react"
 import { fetchOnePokemon } from "../../api/apiFetch"
 import { ROUTES } from "../../constants/routes"
 import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
-import { Stat } from "../../components/Stat/Stat"
+import { StatList } from "../../components/StatList/StatList"
 
 export function Detailpage() {
     
@@ -40,10 +40,9 @@ export function Detailpage() {
                     </div>
 
                     <div className={style.pokemonResume}>
-                        <h1>{currentPokemon?.name}</h1>
+                        <h1>#{currentPokemon?.id} {currentPokemon?.name}</h1>
                         <PokemonTypesList types={currentPokemon?.types}/>
-                        <Stat statLabel={'HP'} statValue={45}/>
-                        <Stat statLabel={'Special defense'} statValue={255}/>
+                        <StatList stats={currentPokemon.base}/>
                     </div>
                 </div>
             </main>

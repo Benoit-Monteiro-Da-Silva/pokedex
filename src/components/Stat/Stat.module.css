@@ -28,5 +28,5 @@
 }
 
 .coloredStatBar {
-    background: blue;
+    transition: width 1s ease-out;
 }

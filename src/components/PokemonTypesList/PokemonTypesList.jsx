@@ -1,7 +1,7 @@
 import { TypeBadge } from "../TypeBadge/TypeBadge"
 import style from "./PokemonTypesList.module.css"
 
-//Display a list of pokemon types badges from a give array of types
+//Display the list of one pokemon types badges
 export function PokemonTypesList({types}) {
     return(
         <ul className={style.pokemonTypesList}>
