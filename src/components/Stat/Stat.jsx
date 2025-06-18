@@ -8,7 +8,9 @@ export function Stat({statLabel, statValue}) {
     const statColor = statWidth * 2.55
 
     useEffect(() => {
-        setStatWidth(statValue < MAX_STAT[statLabel] ? (statValue / MAX_STAT[statLabel]) * 100 : 100)
+        setTimeout(() => {
+            setStatWidth(statValue < MAX_STAT[statLabel] ? (statValue / MAX_STAT[statLabel]) * 100 : 100)
+        }, 10)
     }, [statValue])
 
     return(

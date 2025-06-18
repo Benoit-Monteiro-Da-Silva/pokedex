@@ -19,3 +19,19 @@ export const fetchOnePokemon = async (id) => {
         return null
     }
 }
+
+export const patchPokemon = async (id, data) => {
+    try {
+        await fetch(`${import.meta.env.VITE_API_BASE_URL}/pokemons/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(data)
+        })
+        return true
+    } catch(error) {
+        console.error(`Error: ${error}`)
+        return false
+    }
+}

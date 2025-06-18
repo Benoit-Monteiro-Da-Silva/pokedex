@@ -6,6 +6,7 @@ import { fetchOnePokemon } from "../../api/apiFetch"
 import { ROUTES } from "../../constants/routes"
 import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
 import { StatList } from "../../components/StatList/StatList"
+import { LikeCounter } from "../../components/LikeCounter/LikeCounter"
 
 export function Detailpage() {
     
@@ -20,6 +21,7 @@ export function Detailpage() {
         const apiResponse = await fetchOnePokemon(id)
         setCurrentPokemon(apiResponse)
     }
+
 
     useEffect(() => {
         if (parsedId >= 1 && parsedId <= parsedMaxId) {
@@ -43,8 +45,10 @@ export function Detailpage() {
                     <div className={style.pokemonResume}>
                         <h1>#{currentPokemon?.id} {currentPokemon?.name}</h1>
                         <PokemonTypesList types={currentPokemon?.types}/>
-                        <StatList stats={currentPokemon.base}/>
+                        <StatList stats={currentPokemon?.base}/>
                     </div>
+
+                    <LikeCounter id={id} likes={currentPokemon?.like}/>
                 </div>
             </main>
         }

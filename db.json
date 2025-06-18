@@ -2,7 +2,7 @@
   "pokemons": [
     {
       "id": "1",
-      "like": 11,
+      "like": 14,
       "name": "Bulbizarre",
       "types": [
         "Grass",
@@ -37,7 +37,7 @@
     },
     {
       "id": "2",
-      "like": 15,
+      "like": 17,
       "name": "Herbizarre",
       "types": [
         "Grass",
@@ -72,7 +72,7 @@
     },
     {
       "id": "3",
-      "like": 7,
+      "like": 8,
       "name": "Florizarre",
       "types": [
         "Grass",
@@ -107,7 +107,7 @@
     },
     {
       "id": "4",
-      "like": 2,
+      "like": 10,
       "name": "Salamèche",
       "types": [
         "Fire"
@@ -175,7 +175,7 @@
     },
     {
       "id": "6",
-      "like": 0,
+      "like": 5,
       "name": "Dracaufeu",
       "types": [
         "Fire",
@@ -278,7 +278,7 @@
     },
     {
       "id": "9",
-      "like": 0,
+      "like": 3,
       "name": "Tortank",
       "types": [
         "Water"

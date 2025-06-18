@@ -12,7 +12,7 @@ export function NotFoundPage() {
             <div className={style.textBloc}>
                 <p className={style.error404}>Error 404 !</p>
                 <p className={style.errorMessage}>The page you've been searching for fell in the unown world...</p>
-                <Link to={ROUTES.HOME} className={style.homeLink}>Return to the Homepage</Link>
+                <Link to={ROUTES.HOME} className={style.homeLink}>Back to the homepage</Link>
             </div>
         </main>
     )
