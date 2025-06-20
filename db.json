@@ -5501,6 +5501,24 @@
       "author": "Me",
       "content": "J'adore ce pokemon",
       "pokemonId": "1"
+    },
+    {
+      "id": "3563",
+      "pokemonId": "150",
+      "author": "Me",
+      "content": "The most powerful pokemon !"
+    },
+    {
+      "id": "550c",
+      "pokemonId": "151",
+      "author": "Me",
+      "content": "The rarest pokemon !"
+    },
+    {
+      "id": "53aa",
+      "pokemonId": "149",
+      "author": "Me",
+      "content": "Lance ace pokemon !"
     }
   ]
 }

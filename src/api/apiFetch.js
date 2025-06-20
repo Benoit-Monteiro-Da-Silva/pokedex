@@ -46,3 +46,23 @@ export const fetchPokemonReviews = async (id) => {
         return []
     }
 }
+
+export const postPokemonReview = async (pkmnId, content, author = "Me") => {
+    try {
+        await fetch(`${import.meta.env.VITE_API_BASE_URL}/reviews`, {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify({
+                pokemonId: pkmnId,
+                author: author,
+                content: content,
+            })
+        })
+        return true
+    } catch(error) {
+        console.error(`Error: ${error}`)
+        return false
+    }
+}

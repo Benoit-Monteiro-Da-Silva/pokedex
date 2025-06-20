@@ -6,6 +6,7 @@ import style from "./Homepage.module.css"
 import { Normalizer } from '../../services/services'
 
 export function Homepage() {
+  
   const [pokemons, setPokemons] = useState([])
   const [filterValue, setFilterValue] = useState('')
 

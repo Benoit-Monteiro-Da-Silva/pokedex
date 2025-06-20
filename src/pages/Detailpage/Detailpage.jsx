@@ -2,12 +2,13 @@ import style from "./Detailpage.module.css"
 import { useState, useEffect} from "react"
 import { useNavigate, useParams } from "react-router"
 import { ROUTES } from "../../constants/routes"
-import { fetchOnePokemon, patchPokemon, fetchPokemonReviews } from "../../api/apiFetch"
+import { fetchOnePokemon, patchPokemon, fetchPokemonReviews, postPokemonReview } from "../../api/apiFetch"
 import { NavButtons } from "../../components/NavButtons/NavButtons"
 import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
 import { StatList } from "../../components/StatList/StatList"
 import { LikeCounter } from "../../components/LikeCounter/LikeCounter"
-import { Review } from "../../components/Review/Review"
+import { ReviewList } from "../../components/ReviewList/ReviewList"
+import { ReviewForm } from "../../components/ReviewForm/ReviewForm"
 
 export function Detailpage() {
     
@@ -34,6 +35,18 @@ export function Detailpage() {
     const updatePokemonLikes = async () => {
         const pokemonPatched = await patchPokemon(id, {like: (currentLikes + 1)})
         if (pokemonPatched) {setCurrentLikes(prevCurrentLikes => prevCurrentLikes + 1)}
+    }
+
+    const addReview = async (e) => {
+        e.preventDefault()
+        const formData = new FormData(e.target)
+        const formValues = Object.fromEntries(formData)
+
+        const postedReview = await postPokemonReview(id, formValues.review)
+        if (postedReview) {
+            loadCurrentReviews(id)
+            e.target.reset()
+        }
     }
 
 
@@ -71,13 +84,8 @@ export function Detailpage() {
 
                     <div className={style.pokemonReviews}>
                         <h2>Reviews</h2>
-                        <ul>
-                            {currentReviews.map(review => (
-                                <li key={review.id}>
-                                    <Review author={review.author} content={review.content}/>
-                                </li>
-                            ))}
-                        </ul>
+                        <ReviewForm onSubmit={addReview}/>
+                        <ReviewList reviews={currentReviews}/>
                     </div>
                 </div>
             </main>

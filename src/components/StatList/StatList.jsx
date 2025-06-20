@@ -2,7 +2,6 @@ import { Stat } from "../Stat/Stat"
 
 //Display the list of one pokemon stats
 export function StatList({stats}) {
-
     const statsArray = Object.entries(stats)
     
     return(

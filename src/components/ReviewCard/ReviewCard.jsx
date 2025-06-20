@@ -1,6 +1,7 @@
-import style from './Review.module.css'
+import style from './ReviewCard.module.css'
 
-export function Review({author, content}) {
+//Display a review with its author and its content
+export function ReviewCard({author, content}) {
     return(
         <div className={style.review}>
             <p>{content}</p>

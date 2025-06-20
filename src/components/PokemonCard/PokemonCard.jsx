@@ -5,11 +5,12 @@ import { PokemonTypesList } from "../PokemonTypesList/PokemonTypesList"
 
 //Display a pokemon card and redirect to the corresponding pokemon page when clicked on
 export function PokemonCard({id, name, types}) {
+    const imgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${id}.svg`
 
     return(
         <Link to={ROUTES.DETAIL.replace(":id", id)} className={style.pokemonCard}>
             <div className={style.imgContainer}>
-                <img src={`${import.meta.env.VITE_IMAGE_BASE_URL}/${id}.svg`} alt={name}/>
+                <img src={imgUrl} alt={name}/>
             </div>
             <p className={style.pokemonName}>#{id} {name}</p>
             <PokemonTypesList types={types}/>
