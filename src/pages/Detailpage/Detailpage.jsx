@@ -4,11 +4,9 @@ import { useNavigate, useParams } from "react-router"
 import { ROUTES } from "../../constants/routes"
 import { fetchOnePokemon, patchPokemon, fetchPokemonReviews, postPokemonReview } from "../../api/apiFetch"
 import { NavButtons } from "../../components/NavButtons/NavButtons"
-import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
-import { StatList } from "../../components/StatList/StatList"
 import { LikeCounter } from "../../components/LikeCounter/LikeCounter"
-import { ReviewList } from "../../components/ReviewList/ReviewList"
-import { ReviewForm } from "../../components/ReviewForm/ReviewForm"
+import { PokemonResume } from "../../components/PokemonResume/PokemonResume"
+import { PokemonReviews } from "../../components/PokemonReviews/PokemonReviews"
 
 export function Detailpage() {
     
@@ -21,6 +19,7 @@ export function Detailpage() {
     const [currentLikes, setCurrentLikes] = useState(0)
     const [currentReviews, setCurrentReviews] = useState([])
 
+    const imgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`
 
     const loadCurrentPokemon = async (id) => {
         const pokemonData = await fetchOnePokemon(id)
@@ -49,7 +48,6 @@ export function Detailpage() {
         }
     }
 
-
     useEffect(() => {
         if (parsedId >= 1 && parsedId <= parsedMaxId) {
             loadCurrentPokemon(id)
@@ -69,24 +67,18 @@ export function Detailpage() {
         {currentPokemon &&
             <main className={style.detailpage}>
                 <NavButtons id={currentPokemon?.id}/>
+
                 <div className={style.pokemonData}>
                     <div className={style.imgContainer}>
-                        <img src={`${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`}/>
+                        <img src={imgUrl} alt=""/>
                     </div>
-
-                    <div className={style.pokemonResume}>
-                        <h1>#{currentPokemon?.id} {currentPokemon?.name}</h1>
-                        <PokemonTypesList types={currentPokemon?.types}/>
-                        <StatList stats={currentPokemon?.base}/>
-                    </div>
-
+                    <PokemonResume 
+                        id={currentPokemon?.id} 
+                        name={currentPokemon?.name} 
+                        types={currentPokemon?.types} 
+                        stats={currentPokemon?.base}/>
                     <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
-
-                    <div className={style.pokemonReviews}>
-                        <h2>Reviews</h2>
-                        <ReviewForm onSubmit={addReview}/>
-                        <ReviewList reviews={currentReviews}/>
-                    </div>
+                    <PokemonReviews reviews={currentReviews} onSubmit={addReview}/>
                 </div>
             </main>
         }

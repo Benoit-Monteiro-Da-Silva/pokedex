@@ -1,8 +1,8 @@
 import { TypeBadge } from "../TypeBadge/TypeBadge"
-import style from "./PokemonTypesList.module.css"
+import style from "./TypeBadgeList.module.css"
 
 //Display the list of types a pokemon has
-export function PokemonTypesList({types}) {
+export function TypeBadgeList({types}) {
     return(
         <ul className={style.pokemonTypesList}>
             {types.map((type, index) => (

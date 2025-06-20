@@ -1,7 +1,7 @@
 import style from "./PokemonCard.module.css"
 import { Link } from "react-router"
 import { ROUTES } from "../../constants/routes"
-import { PokemonTypesList } from "../PokemonTypesList/PokemonTypesList"
+import { TypeBadgeList } from "../TypeBadgeList/TypeBadgeList"
 
 //Display a pokemon card and redirect to the corresponding pokemon page when clicked on
 export function PokemonCard({id, name, types}) {
@@ -10,10 +10,10 @@ export function PokemonCard({id, name, types}) {
     return(
         <Link to={ROUTES.DETAIL.replace(":id", id)} className={style.pokemonCard}>
             <div className={style.imgContainer}>
-                <img src={imgUrl} alt={name}/>
+                <img src={imgUrl} alt=""/>
             </div>
             <p className={style.pokemonName}>#{id} {name}</p>
-            <PokemonTypesList types={types}/>
+            <TypeBadgeList types={types}/>
         </Link>
     )
 }
