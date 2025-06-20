@@ -210,7 +210,7 @@
     },
     {
       "id": "7",
-      "like": 0,
+      "like": 2,
       "name": "Carapuce",
       "types": [
         "Water"
@@ -244,7 +244,7 @@
     },
     {
       "id": "8",
-      "like": 0,
+      "like": 5,
       "name": "Carabaffe",
       "types": [
         "Water"
@@ -278,7 +278,7 @@
     },
     {
       "id": "9",
-      "like": 3,
+      "like": 4,
       "name": "Tortank",
       "types": [
         "Water"
@@ -312,7 +312,7 @@
     },
     {
       "id": "10",
-      "like": 0,
+      "like": 1,
       "name": "Chenipan",
       "types": [
         "Bug"

@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router"
 import style from "./Detailpage.module.css"
 import { NavButtons } from "../../components/NavButtons/NavButtons"
 import { useState, useEffect} from "react"
-import { fetchOnePokemon } from "../../api/apiFetch"
+import { fetchOnePokemon, patchPokemon } from "../../api/apiFetch"
 import { ROUTES } from "../../constants/routes"
 import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
 import { StatList } from "../../components/StatList/StatList"
@@ -16,10 +16,17 @@ export function Detailpage() {
     const navigate = useNavigate()
     
     const [currentPokemon, setCurrentPokemon] = useState(null)
+    const [currentLikes, setCurrentLikes] = useState(0)
+
 
     const loadCurrentPokemon = async (id) => {
         const apiResponse = await fetchOnePokemon(id)
         setCurrentPokemon(apiResponse)
+    }
+
+    const updatePokemonLikes = async () => {
+        const pokemonPatched = await patchPokemon(id, {like: (currentLikes + 1)})
+        if (pokemonPatched) {setCurrentLikes(prevCurrentLikes => prevCurrentLikes + 1)}
     }
 
 
@@ -30,6 +37,11 @@ export function Detailpage() {
             navigate(ROUTES.NOT_FOUND)
         }
     }, [id])
+
+
+    useEffect(() => {
+        setCurrentLikes(currentPokemon?.like)
+    }, [currentPokemon])
 
 
     return(
@@ -48,7 +60,7 @@ export function Detailpage() {
                         <StatList stats={currentPokemon?.base}/>
                     </div>
 
-                    <LikeCounter id={id} likes={currentPokemon?.like}/>
+                    <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
                 </div>
             </main>
         }
