@@ -35,3 +35,14 @@ export const patchPokemon = async (id, data) => {
         return false
     }
 }
+
+export const fetchPokemonReviews = async (id) => {
+    try {
+        const apiData = await fetch(`${import.meta.env.VITE_API_BASE_URL}/reviews/?pokemonId=${id}`)
+        const response = await apiData.json()
+        return response
+    } catch(error) {
+        console.error(`Error: ${error}`)
+        return []
+    }
+}

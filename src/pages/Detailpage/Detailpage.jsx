@@ -1,12 +1,13 @@
-import { useNavigate, useParams } from "react-router"
 import style from "./Detailpage.module.css"
-import { NavButtons } from "../../components/NavButtons/NavButtons"
 import { useState, useEffect} from "react"
-import { fetchOnePokemon, patchPokemon } from "../../api/apiFetch"
+import { useNavigate, useParams } from "react-router"
 import { ROUTES } from "../../constants/routes"
+import { fetchOnePokemon, patchPokemon, fetchPokemonReviews } from "../../api/apiFetch"
+import { NavButtons } from "../../components/NavButtons/NavButtons"
 import { PokemonTypesList } from "../../components/PokemonTypesList/PokemonTypesList"
 import { StatList } from "../../components/StatList/StatList"
 import { LikeCounter } from "../../components/LikeCounter/LikeCounter"
+import { Review } from "../../components/Review/Review"
 
 export function Detailpage() {
     
@@ -17,11 +18,17 @@ export function Detailpage() {
     
     const [currentPokemon, setCurrentPokemon] = useState(null)
     const [currentLikes, setCurrentLikes] = useState(0)
+    const [currentReviews, setCurrentReviews] = useState([])
 
 
     const loadCurrentPokemon = async (id) => {
-        const apiResponse = await fetchOnePokemon(id)
-        setCurrentPokemon(apiResponse)
+        const pokemonData = await fetchOnePokemon(id)
+        setCurrentPokemon(pokemonData)
+    }
+
+    const loadCurrentReviews = async (id) => {
+        const reviewsData = await fetchPokemonReviews(id)
+        setCurrentReviews(reviewsData)       
     }
 
     const updatePokemonLikes = async () => {
@@ -33,11 +40,11 @@ export function Detailpage() {
     useEffect(() => {
         if (parsedId >= 1 && parsedId <= parsedMaxId) {
             loadCurrentPokemon(id)
+            loadCurrentReviews(id)
         } else {
             navigate(ROUTES.NOT_FOUND)
         }
     }, [id])
-
 
     useEffect(() => {
         setCurrentLikes(currentPokemon?.like)
@@ -61,6 +68,17 @@ export function Detailpage() {
                     </div>
 
                     <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
+
+                    <div className={style.pokemonReviews}>
+                        <h2>Reviews</h2>
+                        <ul>
+                            {currentReviews.map(review => (
+                                <li key={review.id}>
+                                    <Review author={review.author} content={review.content}/>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </main>
         }
