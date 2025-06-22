@@ -1309,7 +1309,7 @@
     },
     {
       "id": "39",
-      "like": 0,
+      "like": 1,
       "name": "Rondoudou",
       "types": [
         "Normal",
@@ -4936,7 +4936,7 @@
     },
     {
       "id": "145",
-      "like": 0,
+      "like": 1,
       "name": "Électhor",
       "types": [
         "Electric",
@@ -4971,7 +4971,7 @@
     },
     {
       "id": "146",
-      "like": 0,
+      "like": 4,
       "name": "Sulfura",
       "types": [
         "Fire",
@@ -5006,7 +5006,7 @@
     },
     {
       "id": "147",
-      "like": 0,
+      "like": 7,
       "name": "Minidraco",
       "types": [
         "Dragon"
@@ -5040,7 +5040,7 @@
     },
     {
       "id": "148",
-      "like": 0,
+      "like": 5,
       "name": "Draco",
       "types": [
         "Dragon"
@@ -5074,7 +5074,7 @@
     },
     {
       "id": "149",
-      "like": 0,
+      "like": 6,
       "name": "Dracolosse",
       "types": [
         "Dragon",
@@ -5109,7 +5109,7 @@
     },
     {
       "id": "150",
-      "like": 0,
+      "like": 9,
       "name": "Mewtwo",
       "types": [
         "Psychic"
@@ -5143,7 +5143,7 @@
     },
     {
       "id": "151",
-      "like": 0,
+      "like": 9,
       "name": "Mew",
       "types": [
         "Psychic"

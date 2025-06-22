@@ -1,5 +1,5 @@
 import style from "./Detailpage.module.css"
-import { useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router"
 import { ROUTES } from "../../constants/routes"
 import { fetchOnePokemon, patchPokemon, fetchPokemonReviews, postPokemonReview } from "../../api/apiFetch"
@@ -18,6 +18,7 @@ export function Detailpage() {
     const [currentPokemon, setCurrentPokemon] = useState(null)
     const [currentLikes, setCurrentLikes] = useState(0)
     const [currentReviews, setCurrentReviews] = useState([])
+    const [heartAnimated, setHeartAnimated] = useState(false)
 
     const imgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`
 
@@ -33,7 +34,11 @@ export function Detailpage() {
 
     const updatePokemonLikes = async () => {
         const pokemonPatched = await patchPokemon(id, {like: (currentLikes + 1)})
-        if (pokemonPatched) {setCurrentLikes(prevCurrentLikes => prevCurrentLikes + 1)}
+        if (pokemonPatched) {
+            setCurrentLikes(prevCurrentLikes => prevCurrentLikes + 1)
+            setHeartAnimated(true)
+            setTimeout(() => setHeartAnimated(false), 1000)
+        }
     }
 
     const addReview = async (e) => {
@@ -82,7 +87,7 @@ export function Detailpage() {
                         types={currentPokemon?.types} 
                         stats={currentPokemon?.base}/>
                     <div className={style.likesAndReviewsContainer}>
-                        <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
+                        <LikeCounter likes={currentLikes} onClick={updatePokemonLikes} animated={heartAnimated}/>
                         <PokemonReviews reviews={currentReviews} onSubmit={addReview}/>
                     </div>
                 </div>
