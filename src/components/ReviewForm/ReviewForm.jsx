@@ -1,6 +1,6 @@
 import style from "./ReviewForm.module.css"
 
-//Display an input field that allows to add a review to a pokemon when pressing Enter
+//Display an input field that allows to add a review to a pokemon when pressing Enter.
 export function ReviewForm({onSubmit}) {
     return(
         <form className={style.form} onSubmit={onSubmit}>

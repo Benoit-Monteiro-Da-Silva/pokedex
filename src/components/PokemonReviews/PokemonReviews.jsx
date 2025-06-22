@@ -1,6 +1,7 @@
 import { ReviewForm } from "../ReviewForm/ReviewForm"
 import { ReviewList } from "../ReviewList/ReviewList"
 
+//Display all the registered reviews of a pokemon, as well as an input field to add one.
 export function PokemonReviews({onSubmit, reviews}) {
     return(
         <div>

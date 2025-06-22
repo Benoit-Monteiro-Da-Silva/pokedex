@@ -1,6 +1,7 @@
 .stat {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 
     font-weight: 500;
@@ -9,10 +10,12 @@
 
 .statLabel {
     flex-basis: 135px;
+    flex-shrink: 0;
 }
 
 .statValue {
     flex-basis: 40px;
+    flex-shrink: 0;
     text-align: center;
 }
 
@@ -24,7 +27,8 @@
 .fullStatBar {
     background: rgba(220,220,220);
     outline: 1px solid black;
-    width: 200px;
+    flex: 1;
+    min-width: 105px;
 }
 
 .coloredStatBar {

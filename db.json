@@ -555,7 +555,7 @@
     },
     {
       "id": "17",
-      "like": 0,
+      "like": 1,
       "name": "Roucoups",
       "types": [
         "Normal",
@@ -625,7 +625,7 @@
     },
     {
       "id": "19",
-      "like": 0,
+      "like": 1,
       "name": "Rattata",
       "types": [
         "Normal"
@@ -5519,6 +5519,24 @@
       "pokemonId": "149",
       "author": "Me",
       "content": "Lance ace pokemon !"
+    },
+    {
+      "id": "93b4",
+      "pokemonId": "130",
+      "author": "Me",
+      "content": "Did you catch a shiny one ?"
+    },
+    {
+      "id": "8e34",
+      "pokemonId": "39",
+      "author": "Me",
+      "content": "The cutest pokemon !"
+    },
+    {
+      "id": "5bdd",
+      "pokemonId": "19",
+      "author": "Me",
+      "content": "The first one you're gonna catch."
     }
   ]
 }

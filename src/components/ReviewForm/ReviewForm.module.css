@@ -5,7 +5,7 @@
 }
 
 .input {
-    margin: 20px;
+    margin-block: 24px;
     padding: 8px 16px;
     border: 1px solid black;
     border-radius: 8px;

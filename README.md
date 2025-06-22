@@ -1,12 +1,31 @@
-# React + Vite
+## POKEDEX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React project provides an interactive list of the original 151 pokemons.
+For each pokemon, you can see its detailed stats, and you can post comments.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Requirements
+- Node.js 20.18.0
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+Clone the repository, then run the following commands in your terminal:
+
+- npm install
+
+---
+
+## Running the project
+
+Start the local server with the command: 
+
+- npm run server
+
+Let the server run, then, with another terminal, start the app with the command : 
+
+- npm run dev
+
+You can then access the app by visiting http://localhost:3000/ in your web browser

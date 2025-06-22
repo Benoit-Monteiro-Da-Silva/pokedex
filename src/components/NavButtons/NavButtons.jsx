@@ -2,7 +2,7 @@ import style from "./NavButtons.module.css"
 import { Link } from "react-router"
 import { ROUTES } from "../../constants/routes"
 
-//Display two navigations buttons: one to go to the previous pokemon page in the id order, one to go to the next
+//Display two navigations buttons: one to go to the previous pokemon page in the id order, one to go to the next.
 export function NavButtons({id}) {
     const parsedMaxId = Number(import.meta.env.VITE_MAX_POKEMON_ID)
 

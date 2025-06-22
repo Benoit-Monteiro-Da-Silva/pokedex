@@ -1,7 +1,7 @@
 import style from "./ReviewList.module.css"
 import { ReviewCard } from "../ReviewCard/ReviewCard"
 
-//Display a list of reviews
+//Display all the reviews for a pokemon.
 export function ReviewList({reviews}) {
     return(
         <ul className={style.reviewList}>

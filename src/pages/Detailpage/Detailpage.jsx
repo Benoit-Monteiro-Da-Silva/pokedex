@@ -68,8 +68,12 @@ export function Detailpage() {
             <main className={style.detailpage}>
                 <NavButtons id={currentPokemon?.id}/>
 
+                <div className={style.backgroundImg}>
+                    <img src="/src/assets/pokeball_bg.svg"/>
+                </div>
+
                 <div className={style.pokemonData}>
-                    <div className={style.imgContainer}>
+                    <div className={style.pokemonImg}>
                         <img src={imgUrl} alt=""/>
                     </div>
                     <PokemonResume 
@@ -77,8 +81,10 @@ export function Detailpage() {
                         name={currentPokemon?.name} 
                         types={currentPokemon?.types} 
                         stats={currentPokemon?.base}/>
-                    <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
-                    <PokemonReviews reviews={currentReviews} onSubmit={addReview}/>
+                    <div className={style.likesAndReviewsContainer}>
+                        <LikeCounter likes={currentLikes} onClick={updatePokemonLikes}/>
+                        <PokemonReviews reviews={currentReviews} onSubmit={addReview}/>
+                    </div>
                 </div>
             </main>
         }

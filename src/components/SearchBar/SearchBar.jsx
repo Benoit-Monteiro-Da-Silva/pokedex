@@ -1,6 +1,6 @@
 import style from "./SearchBar.module.css"
 
-//Display an input field that filters the displayed Pokemon list as the user types
+//Display an input field that filters the displayed Pokemon list as the user types.
 export function SearchBar({inputValue, onInputChange}) {
     return(
         <input 

@@ -1,6 +1,6 @@
 import style from "./LikeCounter.module.css"
 
-//Display a like counter that increases each time it is clicked
+//Display a like counter that increases each time it is clicked.
 export function LikeCounter({likes, onClick}) {
     return(
         <div className={style.likeContainer}>
