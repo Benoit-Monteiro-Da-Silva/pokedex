@@ -899,7 +899,7 @@
     },
     {
       "id": "27",
-      "like": 0,
+      "like": 2,
       "name": "Sabelette",
       "types": [
         "Ground"
@@ -2794,7 +2794,7 @@
     },
     {
       "id": "82",
-      "like": 0,
+      "like": 1,
       "name": "Magnéton",
       "types": [
         "Electric",
@@ -5549,6 +5549,30 @@
       "pokemonId": "18",
       "author": "Me",
       "content": "Not so strong..."
+    },
+    {
+      "id": "707c",
+      "pokemonId": "25",
+      "author": "Me",
+      "content": "Pokemon mascot"
+    },
+    {
+      "id": "2e62",
+      "pokemonId": "26",
+      "author": "Me",
+      "content": "Big belly"
+    },
+    {
+      "id": "3fd0",
+      "pokemonId": "27",
+      "author": "Me",
+      "content": "I like this one !"
+    },
+    {
+      "id": "4be3",
+      "pokemonId": "27",
+      "author": "Me",
+      "content": "It's really cute !"
     }
   ]
 }

@@ -19,6 +19,7 @@ export function Detailpage() {
     const [currentLikes, setCurrentLikes] = useState(0)
     const [currentReviews, setCurrentReviews] = useState([])
     const [heartAnimated, setHeartAnimated] = useState(false)
+    const [reviewAdded, setReviewAdded] = useState(false)
 
     const imgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`
 
@@ -51,6 +52,8 @@ export function Detailpage() {
         if (postedReview) {
             loadCurrentReviews(id)
             e.target.reset()
+            setReviewAdded(true)
+            setTimeout(() => setReviewAdded(false), 1000)
         }
     }
 
@@ -89,7 +92,7 @@ export function Detailpage() {
                         stats={currentPokemon?.base}/>
                     <div className={style.likesAndReviewsContainer}>
                         <LikeCounter likes={currentLikes} onClick={updatePokemonLikes} animated={heartAnimated}/>
-                        <PokemonReviews reviews={currentReviews} onSubmit={addReview}/>
+                        <PokemonReviews reviews={currentReviews} onSubmit={addReview} reviewAdded={reviewAdded}/>
                     </div>
                 </div>
             </main>
