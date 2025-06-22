@@ -29,7 +29,8 @@ export function Detailpage() {
 
     const loadCurrentReviews = async (id) => {
         const reviewsData = await fetchPokemonReviews(id)
-        setCurrentReviews(reviewsData)       
+        const mostRecentReviewsFirst = reviewsData.reverse()
+        setCurrentReviews(mostRecentReviewsFirst)       
     }
 
     const updatePokemonLikes = async () => {

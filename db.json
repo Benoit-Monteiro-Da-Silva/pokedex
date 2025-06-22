@@ -5537,6 +5537,18 @@
       "pokemonId": "19",
       "author": "Me",
       "content": "The first one you're gonna catch."
+    },
+    {
+      "id": "3a38",
+      "pokemonId": "6",
+      "author": "Me",
+      "content": "Probably the most popular of all !"
+    },
+    {
+      "id": "c3b8",
+      "pokemonId": "18",
+      "author": "Me",
+      "content": "Not so strong..."
     }
   ]
 }
