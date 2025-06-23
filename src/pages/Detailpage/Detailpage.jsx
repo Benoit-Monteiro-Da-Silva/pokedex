@@ -21,7 +21,7 @@ export function Detailpage() {
     const [heartAnimated, setHeartAnimated] = useState(false)
     const [reviewAdded, setReviewAdded] = useState(false)
 
-    const imgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`
+    const pokemonImgUrl = `${import.meta.env.VITE_IMAGE_BASE_URL}/${currentPokemon?.id}.svg`
 
     const loadCurrentPokemon = async (id) => {
         const pokemonData = await fetchOnePokemon(id)
@@ -83,7 +83,7 @@ export function Detailpage() {
 
                 <div className={style.pokemonData}>
                     <div className={style.pokemonImg}>
-                        <img src={imgUrl} alt=""/>
+                        <img src={pokemonImgUrl} alt=""/>
                     </div>
                     <PokemonResume 
                         id={currentPokemon?.id} 
