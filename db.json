@@ -3004,7 +3004,7 @@
     },
     {
       "id": "88",
-      "like": 0,
+      "like": 2,
       "name": "Tadmorv",
       "types": [
         "Poison"
@@ -5579,6 +5579,12 @@
       "pokemonId": "63",
       "author": "Me",
       "content": "Difficult to catch."
+    },
+    {
+      "id": "3a45",
+      "pokemonId": "88",
+      "author": "Me",
+      "content": "Bloup"
     }
   ]
 }
